@@ -4,6 +4,12 @@ import "./navbar.scss";
 import { FaSistrix } from "react-icons/fa";
 
 const Navbar = () => {
+  const [clicked, setClicked] = useState(false);
+  //false = bars, true = times
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
+
   return (
     <div className="navbar">
       <nav className="navbar_container">
@@ -22,20 +28,20 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <ul className="navbar_main_menu">
-          <li>채용</li>
-          <li>이벤트</li>
-          <li>직군별 연봉</li>
-          <li>이력서</li>
-          <li>
-            커뮤니티
-            <span>New</span>
-          </li>
-          <li>프리랜서</li>
-          <li>
-            AI 합격예측
-            <span>Beta</span>
-          </li>
+        <ul
+          className={
+            (clicked ? "nav-menu active" : "nav-menu", "navbar_main_menu")
+          }
+        >
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <a className={item.cName} hre={item.url}>
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
         </ul>
         <aside className="navbar_aside_menu">
           <ul>
