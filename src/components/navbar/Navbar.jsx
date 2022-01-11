@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import { MenuItems } from "./MenuItems";
 import "./navbar.scss";
 import { FaSistrix } from "react-icons/fa";
 
