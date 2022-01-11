@@ -1,9 +1,17 @@
+@import "src/mixins";
+
 .navbar {
   width: 100%;
   background-color: #fff;
   color: #0b0b0b;
   z-index: 100;
   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+  @include tablet {
+    height: 110px;
+  }
+  @include mobile {
+    height: 110px;
+  }
 
   li {
     cursor: pointer;
@@ -11,24 +19,52 @@
 
   .navbar_container {
     display: flex;
-    position: relative;
+    // position: relative;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
     max-width: 1060px;
     height: 50px;
     margin: auto;
+    @include tablet {
+      width: 90%;
+    }
+    @include mobile {
+      margin: 0;
+      padding: 15px 20px;
+    }
 
     ul {
       list-style: none;
     }
   }
 
-  .navbar_dropmenu_logo {
+  .navbar_dropmenu_wrapper {
     display: flex;
     text-align: center;
     justify-content: space-between;
-    // width: 106.38px;
-    // height: 20px;
+    @include tablet {
+      height: 60px;
+      width: 100%;
+      padding: 15px 0;
+    }
+    @include mobile {
+      // height: 60px;
+      width: 100%;
+    }
+
+    .navbar_button_logo_wrapper {
+      display: flex;
+      text-align: center;
+      justify-content: space-around;
+      @include tablet {
+        padding-top: 5px;
+      }
+      @include mobile {
+        padding-top: 5px;
+      }
+    }
 
     .navButton {
       width: 17px;
@@ -53,6 +89,25 @@
       height: 16.8px;
       cursor: pointer;
     }
+
+    #gnbSignupBtn {
+      display: none;
+      background-color: #fff;
+      color: #36f;
+      font-size: 14px;
+      line-height: 32px;
+      width: 114px;
+      height: 34px;
+      border: 1px solid #36f;
+      border-radius: 17px;
+      padding: 0 14px;
+      @include tablet {
+        display: inline-block;
+      }
+      @include mobile {
+        display: inline-block;
+      }
+    }
   }
 
   .navbar_main_menu {
@@ -61,12 +116,21 @@
     position: relative;
     vertical-align: middle;
     font-size: 14px;
-    line-height: 20px;
     font-weight: 600;
+    line-height: 0px;
     color: #333333;
+    @include tablet {
+      font-size: 13px;
+    }
+    @include mobile {
+      display: none;
+    }
 
     li {
       padding: 15px;
+      @include tablet {
+        padding: 11px 10px 19px;
+      }
     }
 
     li > span {
@@ -78,15 +142,34 @@
       font-size: 9px;
       font-weight: 500;
       position: absolute;
-      top: 10px;
+      top: 7px;
       pointer-events: none;
       font-style: normal;
+      @include tablet {
+        top: 3px;
+      }
+    }
+  }
+
+  .xsnavbar_main_menu {
+    display: none;
+
+    li {
+      padding: 11px 10px 19px;
+      height: inherit;
+      display: inline-block;
+    }
+
+    @include mobile {
+      display: inline-flex;
+      text-align: left;
+      height: inherit;
+      margin: 0;
     }
   }
 
   .navbar_aside_menu {
-    // width: 295.73px;
-    // height: 50px;
+    height: 100%;
     padding: 10px 0;
 
     ul {
@@ -108,8 +191,9 @@
       .searchButton {
         margin: 5px 0px 0px;
         padding: 0px 10px;
-        width: 38px;
-        height: 27px;
+        @include miniPc {
+          padding: 0 5px;
+        }
       }
 
       .search_icon {
@@ -118,10 +202,18 @@
       }
 
       .signButton {
-        // width: 124.5px;
-        // height: 14px;
         margin-right: 6px;
         padding: 0 10px;
+        @include miniPc {
+          margin: 0;
+          padding: 0 3px;
+        }
+        @include tablet {
+          display: none;
+        }
+        @include mobile {
+          display: none;
+        }
       }
 
       .dashboardButton {
@@ -133,8 +225,15 @@
         padding: 0 10px;
         margin-left: 20px;
         font-weight: 400;
-        width: 91.58px;
-        height: 30px;
+        @include miniPc {
+          margin: 0;
+        }
+        @include tablet {
+          display: none;
+        }
+        @include mobile {
+          display: none;
+        }
       }
 
       .leftDevision {
@@ -147,6 +246,30 @@
           height: 10px;
           background-color: #e1e2e3;
           margin: auto 10px;
+          @include tablet {
+            display: none;
+          }
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+
+      .moreMenuToggle {
+        display: none;
+        padding: 0px 5px 0px 10px;
+        margin-top: 5px;
+
+        @include tablet {
+          display: inline-block;
+        }
+        @include mobile {
+          display: inline-block;
+        }
+
+        .moreMenuToggle_icon {
+          width: 16px;
+          height: 16px;
         }
       }
     }
