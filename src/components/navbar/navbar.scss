@@ -1,10 +1,13 @@
 .navbar {
   width: 100%;
-  // position: fixed;
   background-color: #fff;
   color: #0b0b0b;
-  box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
   z-index: 100;
+  box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+
+  li {
+    cursor: pointer;
+  }
 
   .navbar_container {
     display: flex;
@@ -24,16 +27,31 @@
     display: flex;
     text-align: center;
     justify-content: space-between;
-    width: 106.38px;
-    height: 20px;
+    // width: 106.38px;
+    // height: 20px;
+
+    .navButton {
+      width: 17px;
+      height: 22px;
+      margin-right: 15px;
+    }
+
     img {
       width: 17px;
       height: 14px;
       object-fit: contain;
+      cursor: pointer;
     }
+
+    .logoButton {
+      width: 74.38px;
+      height: 20px;
+    }
+
     #heder_logo_image {
-      width: 75px;
-      height: 17px;
+      width: 74.38px;
+      height: 16.8px;
+      cursor: pointer;
     }
   }
 
@@ -50,11 +68,25 @@
     li {
       padding: 15px;
     }
+
+    li > span {
+      width: 18px;
+      height: 11px;
+      padding: 1px;
+      color: #36f;
+      font-family: "AppleSDGothicNeo-SemiBold", "Apple SD Gothic Neo";
+      font-size: 9px;
+      font-weight: 500;
+      position: absolute;
+      top: 10px;
+      pointer-events: none;
+      font-style: normal;
+    }
   }
 
   .navbar_aside_menu {
-    width: 295.73px;
-    height: 100%;
+    // width: 295.73px;
+    // height: 50px;
     padding: 10px 0;
 
     ul {
@@ -68,38 +100,55 @@
       font-weight: 600;
       color: #333333;
       height: 30px;
-    }
 
-    li {
-      line-height: 30px;
-    }
+      li {
+        line-height: 30px;
+      }
 
-    .searchButton {
-      margin: 5px 0px 0px;
-      padding: 0px 10px;
-      width: 38px;
-      height: 27px;
-    }
+      .searchButton {
+        margin: 5px 0px 0px;
+        padding: 0px 10px;
+        width: 38px;
+        height: 27px;
+      }
 
-    .search_icon {
-      width: 18px;
-      height: 18px;
-    }
+      .search_icon {
+        width: 18px;
+        height: 18px;
+      }
 
-    .signButton {
-      width: 124.5px;
-      height: 14px;
-    }
+      .signButton {
+        // width: 124.5px;
+        // height: 14px;
+        margin-right: 6px;
+        padding: 0 10px;
+      }
 
-    .dashboardButton {
-      font-size: 13px;
-      color: #666;
-      height: 30px;
-      border: 1px solid #e1e2e3;
-      border-radius: 15px;
-      padding: 0 10px;
-      margin-left: 15px;
-      font-weight: 400;
+      .dashboardButton {
+        font-size: 13px;
+        color: #666;
+        height: 30px;
+        border: 1px solid #e1e2e3;
+        border-radius: 15px;
+        padding: 0 10px;
+        margin-left: 20px;
+        font-weight: 400;
+        width: 91.58px;
+        height: 30px;
+      }
+
+      .leftDevision {
+        display: inline-flex;
+        &:before {
+          content: "";
+          display: block;
+          width: 1px;
+          color: #666;
+          height: 10px;
+          background-color: #e1e2e3;
+          margin: auto 10px;
+        }
+      }
     }
   }
 }
