@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 // import { MenuItems } from "./MenuItems";
 import "./navbar.scss";
 import { FaSistrix } from "react-icons/fa";
 import { HiDotsHorizontal } from "react-icons/hi";
 
 const Navbar = () => {
-  const [clicked, setClicked] = useState(false);
-  const handleClick = () => {
-    setClicked(!clicked);
-  };
+  // const [clicked, setClicked] = useState(false);
+  // const handleClick = () => {
+  //   setClicked(!clicked);
+  // };
 
   return (
     <div className="navbar">
