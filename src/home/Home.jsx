@@ -1,12 +1,14 @@
 import "./home.scss";
 import Navbar from "../components/navbar/Navbar";
-import Slide from "../components/slide/Slide";
+import Slider from "../components/slider/Slider";
 
 const Home = () => {
   return (
     <div className="home">
       <Navbar />
-      <Slide />
+      <main>
+        <Slider />
+      </main>
     </div>
   );
 };
