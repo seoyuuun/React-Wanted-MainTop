@@ -10,7 +10,7 @@ import React from "react";
 // `
 
 const SlideBox = () => {
-  return <div></div>;
+  return <div>infobox</div>;
 };
 
 export default SlideBox;
