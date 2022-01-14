@@ -1,3 +1,4 @@
+import React, { useRef } from "react";
 import "./sliderItems.scss";
 
 const SliderItems = () => {

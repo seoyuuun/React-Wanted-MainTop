@@ -5,6 +5,12 @@
   align-items: center;
   margin: 25px 0;
 
+  .slider_container {
+    width: max-content;
+    transform: translateX(0px);
+    transition: all 0.5s ease;
+  }
+
   .slider_arrow {
     display: flex;
     align-items: center;
