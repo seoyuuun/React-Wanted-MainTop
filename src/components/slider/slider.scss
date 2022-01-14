@@ -1,54 +1,5 @@
 .slider {
-  width: 100%;
-  margin-top: 25px;
-
-  .sliderTitle {
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    margin-left: 50px;
-  }
-
-  .slider_wrapper {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-top: 10px;
-    bottom: 30px;
-
-    .slider_arrow {
-      width: 30px;
-      height: 60px;
-      color: white;
-      position: absolute;
-      z-index: 99;
-      top: 0px;
-      bottom: 0px;
-      margin: auto;
-      opacity: 0.5;
-      border-radius: 15px;
-      background-color: black;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .slider_preArrow {
-      position: absolute;
-      left: calc((100% - 1210px) / 2);
-    }
-
-    .slider_nextArrow {
-      position: absolute;
-      right: calc((100% - 1200px) / 2);
-    }
-
-    .slider_container {
-      // margin-left: 50px;
-      // margin-top: 10px;
-      display: flex;
-      width: max-content;
-      transform: translateX(0px);
-      transition: all 1s ease;
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
