@@ -6,8 +6,8 @@ const Slider = () => {
   return (
     <div className="slider">
       <SliderItems />
-      <button className="slider_arrow arrow_prev"></button>
-      <button className="slider_arrow arrow_next"></button>
+      <button className="slider_arrow arrow_prev">왼쪽</button>
+      <button className="slider_arrow arrow_next">오른쪽</button>
     </div>
   );
 };

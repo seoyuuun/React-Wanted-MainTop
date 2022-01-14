@@ -1,5 +1,29 @@
 .slider {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
+  margin: 25px 0;
+
+  .slider_arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 120px;
+    width: 30px;
+    height: 60px;
+    opacity: 0.5;
+    border-radius: 15px;
+    background-color: #fff;
+    font-size: 16px;
+
+    &.arrow_prev {
+      left: calc((100% - 1210px) / 2);
+    }
+
+    &.arrow_next {
+      right: calc((100% - 1200px) / 2);
+    }
+  }
 }
