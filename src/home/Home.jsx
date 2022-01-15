@@ -21,7 +21,7 @@ const Home = () => {
           marginTop: 25,
         }}
       >
-        <Slider show={3}>
+        <Slider show={3} infiniteLoop={true}>
           <div className="slider_content_item">
             <div className="image_wrapper">
               <img
