@@ -4,10 +4,9 @@ import "./slider.scss";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
 const Slider = (props) => {
-  const { children } = props;
+  const { children, show } = props;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [length, setLength] = useState(children.length);
-  const [touchPosition, setTouchPosition] = useState(null);
 
   useEffect(() => {
     setLength(children.length);
