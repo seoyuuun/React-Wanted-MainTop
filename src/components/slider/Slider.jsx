@@ -1,90 +1,49 @@
-import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+// import SliderItems from "./sliderItems/SliderItems";
 import "./slider.scss";
-import SliderContent from "./SliderContent";
-import Slide from "./Slide";
-// import Arrow from "./Arrow";
+import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 
 const Slider = (props) => {
-  const getWidth = () => window.innerWidth;
+  const { children } = props;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [length, setLength] = useState(children.length);
+  const [touchPosition, setTouchPosition] = useState(null);
 
-  const [state, setState] = useState({
-    activeIndex: 0,
-    translate: 0,
-    transition: 0.45,
-  });
+  useEffect(() => {
+    setLength(children.length);
+  }, [children]);
 
-  const { translate, transition, activeIndex } = state;
-
-  const nextSlide = () => {
-    if (activeIndex === props.slides.length - 1) {
-      return setState({
-        ...state,
-        translate: 0,
-        activeIndex: 0,
-      });
+  const next = () => {
+    if (currentIndex < length - 1) {
+      setCurrentIndex((prevState) => prevState + 1);
     }
-
-    setState({
-      ...state,
-      activeIndex: activeIndex + 1,
-      translate: (activeIndex + 1) * getWidth(),
-    });
   };
 
-  const prevSlide = () => {
-    if (activeIndex === 0) {
-      return setState({
-        ...state,
-        translate: (props.slides.length - 1) * getWidth(),
-        activeIndex: props.slides.length - 1,
-      });
+  const prev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevState) => prevState - 1);
     }
-
-    setState({
-      ...state,
-      activeIndex: activeIndex - 1,
-      translate: (activeIndex - 1) * getWidth(),
-    });
   };
-
   return (
-    <StyledSlider>
-      <SliderContent
-        translate={translate}
-        transition={transition}
-        width={getWidth() * props.slides.length}
-      >
-        {props.slides.map((slide, i) => (
-          <Slide key={slide + i} content={slide} />
-        ))}
-      </SliderContent>
-      <button
-        className="slider_arrow arrow_prev"
-        direction="left"
-        handleClick={prevSlide}
-      >
-        왼쪽
-      </button>
-      <button
-        className="slider_arrow arrow_next"
-        direction="right"
-        handleClick={nextSlide}
-      >
-        오른쪽
-      </button>
-      {/* <Arrow direction="left" handleClick={prevSlide} />
-      <Arrow direction="right" handleClick={nextSlide} /> */}
-    </StyledSlider>
+    <div className="slider_container">
+      <div className="slider_wrapper">
+        <button className="slide_button prev_button" onClick={prev}>
+          <GrFormPrevious />
+        </button>
+        <div className="slider_content_wrapper">
+          <div
+            className="slider_content"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {children}
+          </div>
+        </div>
+        <button className="slide_button next_button" onClick={next}>
+          <GrFormNext />
+        </button>
+      </div>
+    </div>
   );
 };
-
-const StyledSlider = styled.div`
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  margin: 0 auto;
-  overflow: hidden;
-`;
 
 export default Slider;
