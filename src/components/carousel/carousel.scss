@@ -1,0 +1,25 @@
+.carousel_wrapper {
+  position: relative;
+  width: 1060px;
+  margin: 25px auto;
+
+  button {
+    position: absolute;
+    font-size: 16px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    &.prev_button {
+      left: 10px;
+      top: 50%;
+    }
+
+    &.next_button {
+      right: 10px;
+      top: 50%;
+    }
+  }
+}
