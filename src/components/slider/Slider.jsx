@@ -1,13 +1,36 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./slider.scss";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useMemo,
+  // useCallback,
+} from "react";
+import "../../css/slider.scss";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import styled from "styled-components";
 
-const Slider = (props) => {
-  const { children, show, infiniteLoop } = props;
+const Slider = ({ children, show, infiniteLoop }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [sliderContents, setSliderContents] = useState([]);
+  // const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
+  const [length, setLength] = useState(children.length);
   const sliderRef = useRef();
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [length, setLength] = useState(children.length);
+  const middle = useMemo(() => {
+    if (children.lenght % 2 === 0) {
+      return Math.floor(children.lenght / 2) - 1;
+    }
+    return Math.floor(children.lenght / 2);
+  }, [children]);
+
+  // const initList = useCallback(() => {
+  //   const sliderList = [...children];
+  //   for (let i = 0; i < middle; i++) {
+  //     const data = sliderList.pop();
+  //     data && sliderList.unshift(data);
+  //   }
+  //   setSliderContents(sliderList);
+  // }, [middle, children]);
 
   const [isRepeating, setIsRepeating] = useState(
     infiniteLoop && children.length > show
@@ -68,13 +91,18 @@ const Slider = (props) => {
     return output;
   };
 
+  const sliderWrapper = styled.div`
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+  `;
+
   return (
-    <div className="slider_container">
+    <sliderWrapper ref={sliderRef}>
       <div className="slider_wrapper">
         <button className="slide_button prev_button" onClick={prev}>
           <GrFormPrevious />
         </button>
-
         <div className="slider_content_wrapper">
           <div
             className="slider_content"
@@ -93,7 +121,7 @@ const Slider = (props) => {
           <GrFormNext />
         </button>
       </div>
-    </div>
+    </sliderWrapper>
   );
 };
 
