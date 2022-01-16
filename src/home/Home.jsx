@@ -29,6 +29,7 @@ const Home = () => {
                 alt="개발자 성장 비결 공개!"
               />
             </div>
+            <div className="info">info</div>
           </div>
           <div className="slider_content_item">
             <div>
