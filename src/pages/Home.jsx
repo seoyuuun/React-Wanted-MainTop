@@ -15,23 +15,15 @@ const Home = () => {
           marginTop: 25,
         }}
       >
-        <Slider show={3} infiniteLoop={true}>
+        <Slider sliderData={sliderData} show={3} infiniteLoop={true}>
           {sliderData.map((item, index) => {
             return (
-              <div
-                // className={
-                //   currentIndex === index
-                //     ? "carousel_slide_active"
-                //     : "carousel_slide"
-                // }
-                data-index={index}
-              >
+              <div className="carousel_image" key={item.id}>
                 <img
                   src={item.url}
                   alt={item.title}
-                  className="carousel_image"
+                  className="carousel_image_image"
                 />
-                {/* {currentIndex === index + 1 ? ( */}
                 <div className="banner_info">
                   <h2>{item.title}</h2>
                   <h3>{item.description}</h3>
@@ -40,10 +32,6 @@ const Home = () => {
                     바로가기 &#62;
                   </a>
                 </div>
-                {/* ) : null} */}
-                {/* {currentIndex === index + 1 ? null : (
-                    <HandleCarouselOpacity />
-                  )} */}
               </div>
             );
           })}

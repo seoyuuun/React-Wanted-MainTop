@@ -1,45 +1,29 @@
+import "../../css/slider.scss";
 import React, {
   useState,
   useEffect,
   useRef,
   useMemo,
-  // useCallback,
+  useCallback,
 } from "react";
-import "../../css/slider.scss";
+import { sliderData } from "./sliderData";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
-import styled from "styled-components";
 
-const Slider = ({ children, show, infiniteLoop }) => {
+const Slider = (props) => {
+  const { children, show, infiniteLoop } = props;
+
+  // const [items, setItems] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  // const [sliderContents, setSliderContents] = useState([]);
-  // const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
-  const [length, setLength] = useState(children.length);
-  const sliderRef = useRef();
-
-  const middle = useMemo(() => {
-    if (children.lenght % 2 === 0) {
-      return Math.floor(children.lenght / 2) - 1;
-    }
-    return Math.floor(children.lenght / 2);
-  }, [children]);
-
-  // const initList = useCallback(() => {
-  //   const sliderList = [...children];
-  //   for (let i = 0; i < middle; i++) {
-  //     const data = sliderList.pop();
-  //     data && sliderList.unshift(data);
-  //   }
-  //   setSliderContents(sliderList);
-  // }, [middle, children]);
-
+  const [length, setLength] = useState(sliderData.length);
   const [isRepeating, setIsRepeating] = useState(
-    infiniteLoop && children.length > show
+    infiniteLoop && sliderData.length > show
   );
   const [transitionEnabled, setTransitionEnabled] = useState(true);
 
+  const sliderRef = useRef();
   useEffect(() => {
-    setLength(children.length);
-    setIsRepeating(infiniteLoop && children.length > show);
+    setLength(sliderData.length);
+    setIsRepeating(infiniteLoop && sliderData.length > show);
   }, [children, infiniteLoop, show]);
 
   useEffect(() => {
@@ -49,6 +33,81 @@ const Slider = ({ children, show, infiniteLoop }) => {
       }
     }
   }, [currentIndex, isRepeating, show, length]);
+
+  const middle = useMemo(() => {
+    if (sliderData.lenght % 2 === 0) {
+      return Math.floor(sliderData.lenght / 2) - 1;
+    }
+    return Math.floor(sliderData.lenght / 2);
+  }, []);
+
+  // const initList = useCallback(() => {
+  //   const sliderDataList = [...sliderData];
+  //   for (let i = 0; i < middle; i++) {
+  //     const data = sliderDataList.pop();
+  //     data && sliderDataList.unshift(data);
+  //   }
+  //   setItems(sliderDataList);
+  // }, [middle, sliderData]);
+
+  // const initTrnasform = useCallback(() => {
+  //   const { current } = sliderRef;
+
+  //   if (current) {
+  //     current.style.transition = "none";
+  //     current.style.transform = `translateX(-${middle * 100}%)`;
+  //   }
+  // }, [middle]);
+
+  // const moveTransform = useCallback(
+  //   (type) => {
+  //     const { current } = sliderRef;
+
+  //     if (type === "next") {
+  //       current.style.transform = `translateX(-${(middle + 1) * 100}%)`;
+  //     }
+  //     if (type === "prev") {
+  //       current.style.transform = `translateX(-${(middle - 1) * 100}%)`;
+  //     }
+  //   },
+  //   [middle]
+  // );
+
+  // const changeList = useCallback(
+  //   (type) => {
+  //     const sliderDataList = [...sliderData];
+
+  //     if (type === "next") {
+  //       const data = sliderDataList.shift();
+  //       data && sliderDataList.push(data);
+  //     } else {
+  //       const data = sliderDataList.pop();
+  //       data && sliderDataList.unshift(data);
+  //     }
+  //     setItems(sliderDataList);
+  //     setIsRepeating(false);
+  //   },
+  //   [items]
+  // );
+
+  // const onMove = useCallback(
+  //   (type) => {
+  //     moveTransform(type);
+  //     setIsMoving(true);
+
+  //     if (!isMoving) {
+  //       setTimeout(() => {
+  //         changeList(type);
+  //         initTrnasform();
+  //       }, sliderTime);
+  //     }
+  //   },
+  //   [isMoving, sliderTime, changeList, initTrnasform, moveTransform]
+  // );
+
+  // useEffect(() => {
+  //   initList();
+  // }, []);
 
   const prev = () => {
     if (isRepeating || currentIndex > 0) {
@@ -91,15 +150,13 @@ const Slider = ({ children, show, infiniteLoop }) => {
     return output;
   };
 
-  const sliderWrapper = styled.div`
-    flex-direction: column;
-    width: 100%;
-    height: 300px;
-  `;
-
   return (
-    <sliderWrapper ref={sliderRef}>
-      <div className="slider_wrapper">
+    <div className="slider_container">
+      <div
+        className="slider_wrapper"
+        ref={sliderRef}
+        style={{ transition: `translateX(-${middle * 100}%)` }}
+      >
         <button className="slide_button prev_button" onClick={prev}>
           <GrFormPrevious />
         </button>
@@ -121,7 +178,7 @@ const Slider = ({ children, show, infiniteLoop }) => {
           <GrFormNext />
         </button>
       </div>
-    </sliderWrapper>
+    </div>
   );
 };
 
