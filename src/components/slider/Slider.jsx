@@ -1,4 +1,3 @@
-import "../../css/slider.scss";
 import React, {
   useState,
   useEffect,
@@ -8,12 +7,14 @@ import React, {
 } from "react";
 import { sliderData } from "./sliderData";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import "../../css/slider.scss";
+import styled from "styled-components";
 
 const Slider = (props) => {
   const { children, show, infiniteLoop } = props;
 
-  // const [items, setItems] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
   const [length, setLength] = useState(sliderData.length);
   const [isRepeating, setIsRepeating] = useState(
     infiniteLoop && sliderData.length > show
@@ -21,10 +22,19 @@ const Slider = (props) => {
   const [transitionEnabled, setTransitionEnabled] = useState(true);
 
   const sliderRef = useRef();
+
   useEffect(() => {
     setLength(sliderData.length);
     setIsRepeating(infiniteLoop && sliderData.length > show);
   }, [children, infiniteLoop, show]);
+
+  useEffect(() => {
+    if (isRepeating) {
+      if (currentIndex === show || currentIndex === length) {
+        setTransitionEnabled(true);
+      }
+    }
+  }, [currentIndex, isRepeating, show, length]);
 
   useEffect(() => {
     if (isRepeating) {
@@ -41,76 +51,8 @@ const Slider = (props) => {
     return Math.floor(sliderData.lenght / 2);
   }, []);
 
-  // const initList = useCallback(() => {
-  //   const sliderDataList = [...sliderData];
-  //   for (let i = 0; i < middle; i++) {
-  //     const data = sliderDataList.pop();
-  //     data && sliderDataList.unshift(data);
-  //   }
-  //   setItems(sliderDataList);
-  // }, [middle, sliderData]);
-
-  // const initTrnasform = useCallback(() => {
-  //   const { current } = sliderRef;
-
-  //   if (current) {
-  //     current.style.transition = "none";
-  //     current.style.transform = `translateX(-${middle * 100}%)`;
-  //   }
-  // }, [middle]);
-
-  // const moveTransform = useCallback(
-  //   (type) => {
-  //     const { current } = sliderRef;
-
-  //     if (type === "next") {
-  //       current.style.transform = `translateX(-${(middle + 1) * 100}%)`;
-  //     }
-  //     if (type === "prev") {
-  //       current.style.transform = `translateX(-${(middle - 1) * 100}%)`;
-  //     }
-  //   },
-  //   [middle]
-  // );
-
-  // const changeList = useCallback(
-  //   (type) => {
-  //     const sliderDataList = [...sliderData];
-
-  //     if (type === "next") {
-  //       const data = sliderDataList.shift();
-  //       data && sliderDataList.push(data);
-  //     } else {
-  //       const data = sliderDataList.pop();
-  //       data && sliderDataList.unshift(data);
-  //     }
-  //     setItems(sliderDataList);
-  //     setIsRepeating(false);
-  //   },
-  //   [items]
-  // );
-
-  // const onMove = useCallback(
-  //   (type) => {
-  //     moveTransform(type);
-  //     setIsMoving(true);
-
-  //     if (!isMoving) {
-  //       setTimeout(() => {
-  //         changeList(type);
-  //         initTrnasform();
-  //       }, sliderTime);
-  //     }
-  //   },
-  //   [isMoving, sliderTime, changeList, initTrnasform, moveTransform]
-  // );
-
-  // useEffect(() => {
-  //   initList();
-  // }, []);
-
   const prev = () => {
-    if (isRepeating || currentIndex > 0) {
+    if (isRepeating || currentIndex >= 0) {
       setCurrentIndex((prevState) => prevState - 1);
     }
   };
@@ -149,6 +91,17 @@ const Slider = (props) => {
     }
     return output;
   };
+
+  const CarouselOpacityBlock = styled.div`
+    z-index: 100;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+    left: 6px;
+    top: 0;
+  `;
 
   return (
     <div className="slider_container">

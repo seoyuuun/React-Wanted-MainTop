@@ -153,11 +153,18 @@
   }
 
   .xsnavbar_main_menu {
+    width: 174px;
     display: none;
 
     li {
       padding: 11px 10px 19px;
       height: inherit;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 40px;
+      font-weight: 600;
       display: inline-block;
     }
 

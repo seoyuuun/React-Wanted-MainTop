@@ -1,3 +1,5 @@
+@import "src/mixins";
+
 .slider_container {
   flex-direction: column;
   width: 100%;
@@ -32,8 +34,15 @@
         scrollbar-width: none;
 
         img {
+          display: block;
           border-radius: 4px;
           padding: 0 12px;
+          @include tablet {
+            height: 183px;
+          }
+          @include mobile {
+            height: 183px;
+          }
         }
 
         .banner_info {
@@ -50,6 +59,28 @@
             margin: 20px 20px 0;
             font-size: 20px;
             line-height: 1.5;
+            @include tablet {
+              margin-top: 20px;
+              font-size: 18px;
+              line-height: 1;
+              font-weight: 700;
+              color: #333;
+              width: "auto";
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+            @include mobile {
+              margin-top: 20px;
+              font-size: 18px;
+              line-height: 1;
+              font-weight: 700;
+              color: #333;
+              width: "auto";
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
           }
 
           h3 {
@@ -63,6 +94,28 @@
             font-size: 14px;
             line-height: 1.64;
             color: #333;
+            @include tablet {
+              margin-top: 6px;
+              font-size: 13px;
+              font-weight: 500;
+              line-height: 1.15;
+              color: #666;
+              width: "auto";
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+            @include mobile {
+              margin-top: 6px;
+              font-size: 13px;
+              font-weight: 500;
+              line-height: 1.15;
+              color: #666;
+              width: "auto";
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
           }
 
           hr {
@@ -71,6 +124,12 @@
             border: none;
             flex-shrink: 0;
             background-color: #ececec;
+            @include tablet {
+              display: none;
+            }
+            @include mobile {
+              display: none;
+            }
           }
 
           .carousel_link {
@@ -104,7 +163,7 @@
     opacity: 0.5;
     border-radius: 15px;
     background-color: #fff;
-    border: solid 1px gray;
+    border: none;
     cursor: pointer;
 
     &.prev_button {
