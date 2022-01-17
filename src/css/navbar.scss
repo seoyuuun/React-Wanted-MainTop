@@ -4,7 +4,7 @@
   width: 100%;
   background-color: #fff;
   color: #0b0b0b;
-  z-index: 100;
+  z-index: 5;
   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
   @include tablet {
     height: 110px;
@@ -153,11 +153,18 @@
   }
 
   .xsnavbar_main_menu {
+    width: 174px;
     display: none;
 
     li {
       padding: 11px 10px 19px;
       height: inherit;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 40px;
+      font-weight: 600;
       display: inline-block;
     }
 

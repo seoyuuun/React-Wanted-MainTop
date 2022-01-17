@@ -1,15 +1,10 @@
 // import React, { useState } from "react";
 // import { MenuItems } from "./MenuItems";
-import "./navbar.scss";
+import "../../css/navbar.scss";
 import { FaSistrix } from "react-icons/fa";
 import { HiDotsHorizontal } from "react-icons/hi";
 
 const Navbar = () => {
-  // const [clicked, setClicked] = useState(false);
-  // const handleClick = () => {
-  //   setClicked(!clicked);
-  // };
-
   return (
     <div className="navbar">
       <nav className="navbar_container">
@@ -34,12 +29,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <ul
-          // className={
-          //   (clicked ? "nav-menu active" : "nav-menu", "navbar_main_menu")
-          // }
-          className="navbar_main_menu"
-        >
+        <ul className="navbar_main_menu">
           <li>채용</li>
           <li>이벤트</li>
           <li>직군별 연봉</li>
@@ -55,16 +45,11 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* <ul
-          // className={
-          //   (clicked ? "nav-menu active" : "nav-menu", "navbar_main_menu")
-          // }
-          className="xsnavbar_main_menu"
-        >
+        <ul className="xsnavbar_main_menu">
           <li>홈</li>
           <li>채용</li>
           <li>이벤트</li>
-        </ul> */}
+        </ul>
 
         <aside className="navbar_aside_menu">
           <ul>
