@@ -1,5 +1,3 @@
-// import React, { useState } from "react";
-// import { MenuItems } from "./MenuItems";
 import "../../css/navbar.scss";
 import { FaSistrix } from "react-icons/fa";
 import { HiDotsHorizontal } from "react-icons/hi";
