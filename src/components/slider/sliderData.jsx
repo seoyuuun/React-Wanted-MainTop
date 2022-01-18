@@ -1,17 +1,5 @@
 export const sliderData = [
   {
-    title: "나도 개발자 되고 싶다",
-    description: "프론트엔드 무료 교육과정 참여하기",
-    url: "https://static.wanted.co.kr/images/banners/1473/41f7b36e.jpg",
-    link: "/",
-  },
-  {
-    title: "리크루터 커리어 가이드",
-    description: "싼마이 리크루터가 되지 않기 위해",
-    url: "https://static.wanted.co.kr/images/banners/1453/7a978579.jpg",
-    link: "/",
-  },
-  {
     title: "마케터를 위한 데이터",
     description: "잘 나가는 마케터는 무엇이 다를까?",
     url: "https://static.wanted.co.kr/images/banners/1436/e2dd9445.jpg",
@@ -25,7 +13,7 @@ export const sliderData = [
   },
   {
     title: "해, 커리어 EP 02 공개",
-    description: "마지막 관문 2라운드의 승자는?...",
+    description: "마지막 관문 2라운드의 승자는?",
     url: "https://static.wanted.co.kr/images/banners/1468/3df61cbc.jpg",
     link: "/",
   },
@@ -36,9 +24,15 @@ export const sliderData = [
     link: "/",
   },
   {
-    title: "아는 만큼 보인다!",
-    description: `노동법 '채용' 시리즈`,
+    title: "2022년 달라지는 노동법령",
+    description: `노무관리 쟁점 한눈에 파악하기`,
     url: "https://static.wanted.co.kr/images/banners/1454/e504b006.jpg",
+    link: "/",
+  },
+  {
+    title: "될 수 있다, 프론트 개발자!",
+    description: "프론트엔드 무료 교육과정 참여하기",
+    url: "https://static.wanted.co.kr/images/banners/1473/41f7b36e.jpg",
     link: "/",
   },
   {

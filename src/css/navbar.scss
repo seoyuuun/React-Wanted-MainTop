@@ -1,4 +1,4 @@
-@import "src/mixins";
+@import "./mixins";
 
 .navbar {
   width: 100%;
@@ -6,10 +6,8 @@
   color: #0b0b0b;
   z-index: 5;
   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
-  @include tablet {
-    height: 110px;
-  }
-  @include mobile {
+
+  @include minReduction {
     height: 110px;
   }
 
@@ -59,10 +57,7 @@
       display: flex;
       text-align: center;
       justify-content: space-around;
-      @include tablet {
-        padding-top: 5px;
-      }
-      @include mobile {
+      @include minReduction {
         padding-top: 5px;
       }
     }
@@ -102,10 +97,7 @@
       border: 1px solid #36f;
       border-radius: 17px;
       padding: 0 14px;
-      @include tablet {
-        display: inline-block;
-      }
-      @include mobile {
+      @include minReduction {
         display: inline-block;
       }
     }
@@ -216,10 +208,7 @@
           margin: 0;
           padding: 0 3px;
         }
-        @include tablet {
-          display: none;
-        }
-        @include mobile {
+        @include minReduction {
           display: none;
         }
       }
@@ -236,10 +225,7 @@
         @include miniPc {
           margin: 0;
         }
-        @include tablet {
-          display: none;
-        }
-        @include mobile {
+        @include minReduction {
           display: none;
         }
       }
@@ -254,10 +240,7 @@
           height: 10px;
           background-color: #e1e2e3;
           margin: auto 10px;
-          @include tablet {
-            display: none;
-          }
-          @include mobile {
+          @include minReduction {
             display: none;
           }
         }
@@ -268,10 +251,7 @@
         padding: 0px 5px 0px 10px;
         margin-top: 5px;
 
-        @include tablet {
-          display: inline-block;
-        }
-        @include mobile {
+        @include minReduction {
           display: inline-block;
         }
 

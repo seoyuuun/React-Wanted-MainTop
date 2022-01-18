@@ -19,3 +19,9 @@ $miniPc: 1198px;
     @content;
   }
 }
+
+@mixin minReduction {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
