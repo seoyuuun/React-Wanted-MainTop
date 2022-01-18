@@ -2,7 +2,7 @@
 
 ### 🏃 선발과제, 원티드 상단 영역 클론 코딩
 ### ☑️ Link
-http://<br>
+https://seoyuuun-wanted-preboarding.netlify.app/
 
 ### ☑️ Needs
     ⭐ POINT, 현재 원티드 페이지 상단 영역 hover action 제외하고 클론코딩 후 배포하여 링크 제출
