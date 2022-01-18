@@ -38,13 +38,13 @@ const Slider = ({ sliderData, infiniteLoop, setSlideTime }) => {
   const onMove = (direction) => {
     if (direction === "prev") {
       if (currentIndex === 0) {
-        setCurrentIndex(0);
+        setCurrentIndex(5);
       } else {
         setCurrentIndex(currentIndex - 1);
       }
     } else if (direction === "next") {
-      if (currentIndex >= SliderTotal) {
-        setCurrentIndex(1);
+      if (currentIndex > SliderTotal + Loop) {
+        setCurrentIndex(5);
       } else {
         setCurrentIndex(currentIndex + 1);
       }
@@ -97,12 +97,16 @@ const Slider = ({ sliderData, infiniteLoop, setSlideTime }) => {
       <button
         className="slide_button prev_button"
         onClick={() => onMove("prev")}
+        onMouseOver={onMouseOver}
+        onMouseOut={onMouseOut}
       >
         <GrFormPrevious />
       </button>
       <button
         className="slide_button next_button"
         onClick={() => onMove("next")}
+        onMouseOver={onMouseOver}
+        onMouseOut={onMouseOut}
       >
         <GrFormNext />
       </button>
