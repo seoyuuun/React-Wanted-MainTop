@@ -30,7 +30,7 @@ export const SliderContentWrapper = styled.div`
     min-width: 1060px;
   }
   @media (max-width: 1198px) {
-    transform: translateX(48%);
+    transform: translateX(45%);
     min-width: 90%;
   }
 `;
@@ -62,7 +62,7 @@ export const InfoBox = styled.div`
   @media (max-width: 1198px) {
     text-align: center;
     width: 90%;
-    top: 100px;
+    top: 120px;
     left: 5%;
   }
 
