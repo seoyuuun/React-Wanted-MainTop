@@ -16,11 +16,9 @@ active 되지 않는 양쪽의 슬라이드 화면의 밝기가 상대적으로 
 <b>Link</b><br/>
 http://
 
-<b>Cloned 리스트</b>
+<b>Cloned 리스트</b><br/>
 웹페이지의 현재 넓이에 맞춰 반응형으로 재현
 ![1](https://user-images.githubusercontent.com/84560867/149968716-e1e173e5-6bee-424e-94e3-633f3493b91c.png)
-![2](https://user-images.githubusercontent.com/84560867/149968775-81128d42-770a-4e5e-823b-b78254bf2fca.png)
-![4](https://user-images.githubusercontent.com/84560867/149968788-8f78f86b-1510-4910-8f0f-dd40da6a6dc7.png)
 
 버튼 클릭을 활용한 슬라이드 이동 기능, 자동 슬라이드 기능 재현, 마우스 오버시, 자동 슬라이드 기능 멈춤
 https://user-images.githubusercontent.com/84560867/149971488-fea9f03e-eb38-4829-9c46-aef7604905d1.mp4
