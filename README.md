@@ -20,8 +20,8 @@ http://
 웹페이지의 현재 넓이에 맞춰 반응형으로 재현
 ![1](https://user-images.githubusercontent.com/84560867/149968716-e1e173e5-6bee-424e-94e3-633f3493b91c.png)
 
-버튼 클릭을 활용한 슬라이드 이동 기능, 자동 슬라이드 기능 재현, 마우스 오버시, 자동 슬라이드 기능 멈춤
-https://user-images.githubusercontent.com/84560867/149971488-fea9f03e-eb38-4829-9c46-aef7604905d1.mp4
+버튼 클릭을 활용한 슬라이드 이동 기능, 자동 슬라이드 기능 재현, 마우스 오버시, 자동 슬라이드 기능 멈춤<br/>
+https://user-images.githubusercontent.com/84560867/149971488-fea9f03e-eb38-4829-9c46-aef7604905d1.mp4<br/>
 
 <b>보완이 필요한 작업 리스트</b>
 1. 처음에 무한 슬라이드 기능 추가를 위해 children 활용, 접근했으나 슬라이드 복제 기능이 불안정하여 제거, 해당 기능 추가 미완료로 마무리<br/>
