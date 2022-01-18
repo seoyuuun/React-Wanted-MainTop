@@ -7,5 +7,5 @@
 2. 라이브러리를 사용하지 않고 캐러셀(슬라이드) 만들기
 3. 반응형(Responsive Web) 구현
 
-<b>- 배포 주소</b>
-https://optimistic-bose-4e9ed9.netlify.app
+<b>- 배포 주소</b><br/>
+http://
