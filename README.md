@@ -26,3 +26,4 @@ https://user-images.githubusercontent.com/84560867/149971488-fea9f03e-eb38-4829-
 (branch 중 carousel-try-3, carousel-try-4를 재활용해보자! 아자!)<br/>
 2. 슬라이드 배너 영역 반응형이 완벽히 클론 조건과 일치하지 않다.<br/>
 👉 css 재작업이 필요하며 Slider.jsx에서 middle값을 계산해 이를 활용하도록 시도해볼 것.<br/>
+3. 왼쪽 슬라이드 영역이 오른쪽과 달리 이동 중에 렌더링이 늦어 깜빡거린다. 왜 그런지 원인을 찾은 후 수정이 필요하니 이 부분 넘어가지 말고 잊지 말 것.
