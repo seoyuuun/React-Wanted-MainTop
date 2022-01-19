@@ -9,6 +9,7 @@ export const Slide = styled.div`
 
 export const SlideContainer = styled.div`
   display: flex;
+  flex-direction: column;
   flex-direction: row;
   flex-wrap: nowrap;
   position: relative;
